@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
   poweredByHeader: false,
   images: {
+    unoptimized: true,
+    qualities: [70, 75, 100],
     remotePatterns: [
       {
         protocol: "https",

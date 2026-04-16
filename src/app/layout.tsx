@@ -1,21 +1,12 @@
 import type { Metadata } from "next";
 import type { Viewport } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
 
 import { siteConfig } from "@/data/site";
 
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  display: "swap",
-});
+const manrope = { variable: "--font-manrope" };
+const spaceGrotesk = { variable: "--font-space-grotesk" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
