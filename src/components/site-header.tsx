@@ -67,6 +67,36 @@ export function SiteHeader({
     }
   }
 
+  function handleSectionNavClick(
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) {
+    setMenuOpen(false);
+
+    if (!href.startsWith("/#") || pathname !== "/") {
+      return;
+    }
+
+    event.preventDefault();
+
+    const sectionId = href.replace("/#", "");
+    const target = document.getElementById(sectionId);
+
+    if (!target) {
+      return;
+    }
+
+    if (window.location.hash) {
+      window.history.replaceState(
+        null,
+        "",
+        `${window.location.pathname}${window.location.search}`,
+      );
+    }
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
     <header
       className={`sticky top-0 z-40 border-b border-white/60 bg-[rgba(248,244,237,0.78)] backdrop-blur-xl transition-transform duration-300 ease-out lg:translate-y-0 ${
@@ -104,6 +134,7 @@ export function SiteHeader({
             <Link
               key={`${item.label}-${item.href}`}
               href={item.href}
+              onClick={(event) => handleSectionNavClick(event, item.href)}
               className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-950"
             >
               {item.label}
@@ -143,7 +174,7 @@ export function SiteHeader({
                 <Link
                   key={`${item.label}-${item.href}-mobile`}
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(event) => handleSectionNavClick(event, item.href)}
                   className="flex items-center justify-between rounded-2xl border border-white/80 bg-white/80 px-4 py-4 text-sm font-semibold text-slate-900"
                 >
                   {item.label}

@@ -165,21 +165,11 @@ main {
 
 .section-border {
   position: relative;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .section-border::before {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(15, 23, 42, 0) 0%,
-    rgba(15, 23, 42, 0.08) 12%,
-    rgba(15, 23, 42, 0.08) 88%,
-    rgba(15, 23, 42, 0) 100%
-  );
+  content: none;
 }
 
 .noise-grid {

@@ -48,8 +48,7 @@ export const siteConfig = {
   email: "dioniswebstudio@gmail.com",
   location: "Based in Europe, available worldwide",
   whatsappNumber: "37360000000",
-  whatsappDirectLink:
-    "https://api.whatsapp.com/message/SG2JWLAO726VK1?autoload=1&app_absent=0",
+  whatsappDirectLink: "https://wa.me/message/SG2JWLAO726VK1",
   whatsappDefaultMessage:
     "Hi Dionis, I would like a website or landing page quote.",
   title: "Dionis Web | Dionis Grecu, Freelance Web Developer",
@@ -93,11 +92,8 @@ export const siteConfig = {
 };
 
 export function getWhatsAppLink(message = siteConfig.whatsappDefaultMessage) {
-  if (message === siteConfig.whatsappDefaultMessage) {
-    return siteConfig.whatsappDirectLink;
-  }
-
-  return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  void message;
+  return siteConfig.whatsappDirectLink;
 }
 
 export const heroMetrics = [

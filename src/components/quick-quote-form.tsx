@@ -45,8 +45,8 @@ export function QuickQuoteForm() {
           Start with WhatsApp and get a fast reply.
         </h3>
         <p className="text-sm leading-6 text-slate-600 sm:text-base">
-          Share a few details and the form will open a ready-made WhatsApp
-          message. Prefer email instead? Use{" "}
+          Share a few details and the form will open your WhatsApp chat. Prefer
+          email instead? Use{" "}
           <a
             href={`mailto:${siteConfig.email}`}
             className="font-semibold text-slate-950 underline decoration-slate-300 underline-offset-4"
