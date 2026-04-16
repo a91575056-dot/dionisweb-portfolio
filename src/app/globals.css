@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f4ed;
+  --foreground: #0f172a;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: #ffffff;
+  --muted: #596274;
+  --line: rgba(15, 23, 42, 0.1);
+  --brand: #0f766e;
+  --brand-dark: #134e4a;
+  --highlight: #c47d4f;
+  --font-size-base: 16px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-space-grotesk);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+  background-image: linear-gradient(180deg, #fcfaf6 0%, #f7f3ec 100%);
+  min-height: 100vh;
+}
+
+body::selection {
+  background: rgba(15, 118, 110, 0.18);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+img {
+  display: block;
+}
+
+main {
+  position: relative;
+}
+
+.font-display {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+.panel {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 100%),
+    var(--surface);
+  box-shadow:
+    0 22px 60px -40px rgba(15, 23, 42, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  border-radius: 1.75rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.76);
+  color: #475569;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand), var(--highlight));
+  box-shadow: 0 0 0 0.35rem rgba(15, 118, 110, 0.09);
+}
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  padding: 0.9rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #0f172a 0%, #0f766e 120%);
+  color: white;
+  box-shadow: 0 18px 36px -18px rgba(15, 23, 42, 0.45);
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  background: rgba(255, 255, 255, 0.72);
+  color: #0f172a;
+}
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.input-field {
+  width: 100%;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.95rem 1rem;
+  color: #0f172a;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: rgba(15, 118, 110, 0.5);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
+}
+
+.section-border {
+  position: relative;
+}
+
+.section-border::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0) 0%,
+    rgba(15, 23, 42, 0.08) 12%,
+    rgba(15, 23, 42, 0.08) 88%,
+    rgba(15, 23, 42, 0) 100%
+  );
+}
+
+.noise-grid {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  background-size: 2.75rem 2.75rem;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(circle at top, rgba(15, 118, 110, 0.2) 0%, transparent 42%),
+    radial-gradient(circle at bottom right, rgba(196, 125, 79, 0.16) 0%, transparent 34%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
